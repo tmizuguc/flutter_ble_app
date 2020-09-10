@@ -22,7 +22,6 @@ class MainScreen extends StatelessWidget {
       title: 'Joypad with BLE',
       debugShowCheckedModeBanner: false,
       home: JoyPad(),
-      theme: ThemeData.dark(),
     );
   }
 }
@@ -132,9 +131,15 @@ class _JoyPadState extends State<JoyPad> {
   @override
   Widget build(BuildContext context) {
 
-    PadButtonPressedCallback padButtonPressedCallback(int buttonIndex, Gestures gesture) {
-      String data = "buttonIndex: $buttonIndex}";
-      print("buttonIndex: $buttonIndex");
+    PadButtonPressedCallback padButtonPressedCallback1(int buttonIndex, Gestures gesture) {
+      String data = "buttonIndex1: $buttonIndex";
+      print("buttonIndex1: $buttonIndex");
+      writeData(data);
+    }
+
+    PadButtonPressedCallback padButtonPressedCallback2(int buttonIndex, Gestures gesture) {
+      String data = "buttonIndex2: $buttonIndex";
+      print("buttonIndex2: $buttonIndex");
       writeData(data);
     }
 
@@ -152,7 +157,8 @@ class _JoyPadState extends State<JoyPad> {
           ) : Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              PadButtonsView(padButtonPressedCallback: padButtonPressedCallback,)
+              PadButtonsView(padButtonPressedCallback: padButtonPressedCallback1,),
+              PadButtonsView(padButtonPressedCallback: padButtonPressedCallback2,)
           ],
         )
       ),
