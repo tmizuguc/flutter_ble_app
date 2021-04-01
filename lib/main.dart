@@ -32,8 +32,8 @@ class JoyPad extends StatefulWidget {
 
 class _JoyPadState extends State<JoyPad> {
 
-  final String SERVICE_UUID = "4fafc201-1fb5-459e-8fcc-c5c9c331914b";
-  final String CHARACTERISTIC_UUID = "beb5483e-36e1-4688-b7f5-ea07361b26a8";
+  final String SERVICE_UUID = "63b803e2-9201-47ee-968b-1405602a1b8e";
+  final String CHARACTERISTIC_UUID = "46bfca8b-b8d8-40b1-87e7-c22116324c01";
   final String TARGET_DEVICE_NAME = "ESP32 GET NOTI FROM DEVICE";
 
   FlutterBlue flutterBlue = FlutterBlue.instance;
@@ -132,14 +132,14 @@ class _JoyPadState extends State<JoyPad> {
   Widget build(BuildContext context) {
 
     PadButtonPressedCallback padButtonPressedCallback1(int buttonIndex, Gestures gesture) {
-      String data = "buttonIndex1: $buttonIndex";
-      print("buttonIndex1: $buttonIndex");
+      String data = "State: $buttonIndex";
+      print("State: $buttonIndex");
       writeData(data);
     }
 
     PadButtonPressedCallback padButtonPressedCallback2(int buttonIndex, Gestures gesture) {
-      String data = "buttonIndex2: $buttonIndex";
-      print("buttonIndex2: $buttonIndex");
+      String data = "State: $buttonIndex";
+      print("State: $buttonIndex");
       writeData(data);
     }
 
